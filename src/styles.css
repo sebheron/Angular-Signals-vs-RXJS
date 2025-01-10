@@ -1,0 +1,37 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.block {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  color: #fff;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  user-select: none;
+  cursor: grab;
+}
+
+.block:active {
+  cursor: grabbing;
+}
+
+h1 {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  margin: 0;
+  opacity: 0.4;
+}
+
+p {
+  margin: 0;
+  font-size: 1.2rem;
+}
