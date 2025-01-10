@@ -17,7 +17,7 @@ class BlockService {
 
 @Directive()
 abstract class BaseBlockComponent {
-  public renderCount = 0;
+  public checkCount = 0;
   private previousX = 0;
   private previousY = 0;
   protected abstract blockName: string;
@@ -26,7 +26,7 @@ abstract class BaseBlockComponent {
 
   ngDoCheck() {
     if (this.blockService.currentBlock !== this.blockName) return;
-    this.renderCount++;
+    this.checkCount++;
   }
 
   onMouseDown(event: MouseEvent) {
@@ -66,7 +66,7 @@ abstract class BaseBlockComponent {
       (mousedown)="onMouseDown($event)"
     >
       <h1>RXJS</h1>
-      <p>Checks: {{ renderCount }}</p>
+      <p>Checks: {{ checkCount }}</p>
     </div>
   `,
   imports: [AsyncPipe],
@@ -95,7 +95,7 @@ class RXJSBlockComponent extends BaseBlockComponent {
       (mousedown)="onMouseDown($event)"
     >
       <h1>Signals</h1>
-      <p>Checks: {{ renderCount }}</p>
+      <p>Checks: {{ checkCount }}</p>
     </div>
   `,
 })
@@ -123,7 +123,7 @@ export class SignalsBlockComponent extends BaseBlockComponent {
       (mousedown)="onMouseDown($event)"
     >
       <h1>Default</h1>
-      <p>Checks: {{ renderCount }}</p>
+      <p>Checks: {{ checkCount }}</p>
     </div>
   `,
 })
